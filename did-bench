@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+/**
+ * A command-line client for bench testing Decentralized Identifier Networks.
+ *
+ * Copyright (c) 2019 Digital Bazaar, Inc. All rights reserved.
+ */
