@@ -7,5 +7,5 @@
 
  const {startOperations} = require('./lib');
 
- const hostnames = [{hostname: 'genesis.veres.one.localhost:42443'}]
- startOperations({hostnames, operationsPerSecond: 1000})
+ const hostnames = ['genesis.veres.one.localhost:42443']
+ startOperations({hostnames, operationsPerSecond: 500})
