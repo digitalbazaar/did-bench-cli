@@ -9,4 +9,4 @@
 const {startOperations} = require('./lib');
 
 const hostnames = ['genesis.veres.one.localhost:42443'];
-startOperations({hostnames, operationsPerSecond: 55});
+startOperations({hostnames, operationsPerSecond: 110});
