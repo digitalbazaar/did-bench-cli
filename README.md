@@ -4,6 +4,7 @@ A command-line client for bench testing Decentralized Identifier Networks.
 
  * [Quickstart](#quickstart)
  * [Installation](#installation)
+ * [Usage](#usage)
  * [Support](#support)
 
 ## Quickstart
@@ -14,7 +15,7 @@ has node.js and a C++ compiler installed:
 
     npm install did-bench-cli
     cd node_modules/did-bench-cli
-    ./did-bench
+    ./did-bench -o 250 host1.example.com
 
 ## Installation
 
@@ -47,6 +48,24 @@ To download the source and install the client:
     cd did-bench-cli
     npm install
     ./did-bench ...
+
+## Usage
+
+### General
+
+The `did-bench` command has a minimal API.  Help is available with the
+`--help/-h` command line option:
+
+    did-bench -h
+
+Send 100 operations per second to `host1.example.com`:
+
+    did-bench -o 100 host1.example.com
+
+Send 5 operations per second to `host1.example.com` & `host2.example.com:10443`:
+
+    did-bench -o 5 host1.example.com host2.example.com:10443
+
 
 ## Support
 
