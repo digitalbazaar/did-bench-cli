@@ -6,7 +6,68 @@
  */
 'use strict';
 
+const yargs = require('yargs');
 const {startOperations} = require('./lib');
 
-const hostnames = ['genesis.veres.one.localhost:42443'];
-startOperations({hostnames, operationsPerSecond: 110});
+function _setupOperationsCommand(yargs) {
+  const operationsMsg = 'Please provide the ops/sec you want to send';
+  return yargs
+    .positional('hostname', {
+      describe: 'the hostname for the server(s) to send operations',
+      type: 'array'
+    })
+    .demandOption(['operations'], operationsMsg)
+    .option('operations', {
+      alias: 'o',
+      describe: 'Operations per Second',
+      type: 'integer',
+      nargs: 1
+    })
+    .usage('Usage: $0 -o [ops/sec] <hostname>');
+}
+
+// add examples if tagged for a command.  "main" is main app.
+function _setupExamples(yargs, cmd) {
+  function example(cmds, ...rest) {
+    if(cmds.includes(cmd)) {
+      yargs.example(...rest);
+    }
+  }
+  example(
+    ['main'],
+    '$0 -h',
+    'Show help and more examples for did-bench');
+  example(
+    ['main'],
+    '$0 -o 100 genesis.veres.one',
+    'Send 100 ops/sec to the genesis.veres.one DID Network Node.');
+}
+
+function _send(yargs) {
+  const {hostname, operations} = yargs;
+  // TODO: Validate hostname(s)
+  startOperations({hostnames: hostname, operationsPerSecond: operations});
+}
+
+// setup the command line
+yargs
+  .command(['$0 <hostname..>'],
+    'Bench test nodes on a DID Network with a specified operations per second',
+    yargs => {
+      _setupOperationsCommand(yargs);
+    },
+    argv => _send(argv))
+  // general
+  .recommendCommands()
+  .strict()
+  .help('h')
+  .alias('h', 'help');
+
+_setupExamples(yargs, 'main');
+
+// parse
+yargs.argv;
+
+process.on('unhandledRejection', error => {
+  console.error(error);
+});
