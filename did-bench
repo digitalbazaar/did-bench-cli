@@ -45,8 +45,8 @@ function _setupExamples(yargs, cmd) {
     'Show help and more examples for did-bench');
   example(
     ['main'],
-    '$0 -o 100 genesis.veres.one',
-    'Send 100 ops/sec to the genesis.veres.one DID Network Node.');
+    '$0 -o 100 host1.example.com',
+    'Send 100 ops/sec to the host1.example.com DID Network Node.');
 }
 
 function _send(yargs) {
