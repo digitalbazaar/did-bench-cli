@@ -23,6 +23,12 @@ function _setupOperationsCommand(yargs) {
       type: 'integer',
       nargs: 1
     })
+    .option('monitor', {
+      alias: 'm',
+      describe: 'Monitor node(s)',
+      type: 'boolean',
+      nargs: 0
+    })
     .usage('Usage: $0 -o [ops/sec] <hostname>');
 }
 
@@ -44,9 +50,13 @@ function _setupExamples(yargs, cmd) {
 }
 
 function _send(yargs) {
-  const {hostname, operations} = yargs;
+  const {hostname, operations, monitor} = yargs;
   // TODO: Validate hostname(s)
-  startOperations({hostnames: hostname, operationsPerSecond: operations});
+  startOperations({
+    hostnames: hostname,
+    operationsPerSecond: operations,
+    monitor
+  });
 }
 
 // setup the command line
