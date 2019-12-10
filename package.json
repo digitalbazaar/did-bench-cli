@@ -29,7 +29,7 @@
     "chalk": "^3.0.0",
     "crypto-ld": "^3.0.0",
     "delay": "^4.3.0",
-    "did-veres-one": "veres-one/did-veres-one#update-contexts",
+    "did-veres-one": "^10.0.0",
     "fs-extra": "^8.1.0",
     "get-stdin": "^7.0.0",
     "glob": "^7.1.2",
