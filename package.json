@@ -2,7 +2,7 @@
   "name": "did-bench-cli",
   "version": "0.1.0",
   "description": "A command-line client for bench testing Decentralized Identifier Networks.",
-  "license": "BSD-3-Clause",  
+  "license": "BSD-3-Clause",
   "main": "./did-bench",
   "scripts": {
     "lint": "eslint lib"
