@@ -46,7 +46,11 @@ function _setupExamples(yargs, cmd) {
   example(
     ['main'],
     '$0 -o 100 host1.example.com',
-    'Send 100 ops/sec to the host1.example.com DID Network Node.');
+    'Send 100 ops/sec to host1.example.com.');
+  example(
+    ['main'],
+    '$0 -o 100 host1.example.com host2.example.com',
+    'Send 100 ops/sec spread between two hosts on the DID Network.');
 }
 
 function _send(yargs) {
