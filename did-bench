@@ -16,6 +16,14 @@ function _setupOperationsCommand(yargs) {
       describe: 'the hostname for the server(s) to send operations',
       type: 'array'
     })
+    .option('mode', {
+      describe: 'Mode of operation',
+      choices: [
+        'test',
+        'dev'
+      ],
+      default: 'test'
+    })
     .demandOption(['operations'], operationsMsg)
     .option('operations', {
       alias: 'o',
@@ -54,9 +62,10 @@ function _setupExamples(yargs, cmd) {
 }
 
 function _send(yargs) {
-  const {hostname, operations, monitor} = yargs;
+  const {mode, hostname, operations, monitor} = yargs;
   // TODO: Validate hostname(s)
   startOperations({
+    mode,
     hostnames: hostname,
     operationsPerSecond: operations,
     monitor
