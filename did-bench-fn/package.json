@@ -1,0 +1,16 @@
+{
+  "name": "did-bench-fn",
+  "version": "1.0.0",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "dependencies": {
+    "did-bench-cli": "github:digitalbazaar/did-bench-cli#feature-additions",
+    "hdr-histogram-js": "^2.0.1",
+    "hdr-histogram-percentiles-obj": "^3.0.0",
+    "p-all": "^3.0.0",
+    "p-settle": "^4.1.1",
+    "reinterval": "^1.1.0"
+  }
+}
