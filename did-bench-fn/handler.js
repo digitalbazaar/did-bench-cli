@@ -27,10 +27,10 @@ module.exports = async (event, context) => {
 
 async function didBench({
   mode = 'test',
-  operationCount = 100,
-  concurrency = 5,
+  operationCount = 4,
+  concurrency = 4,
   hostname,
-  duration = 20
+  duration = 10
 } = {}) {
   const latencyStats = new Array();
   let requestStats = new Array();
@@ -152,7 +152,7 @@ function generateReport(
 }
 
 setImmediate(async () => {
-  const opts = {hostname: 'node-1.veres.one.local:45443', mode: 'dev'};
+  const opts = {hostname: 'localhost:45443', mode: 'dev'};
   const stuff = await didBench(opts);
-  console.log(stuff);
+  console.log(JSON.stringify(stuff));
 });
