@@ -63,3 +63,6 @@ typings/
 TAGS
 reports
 .cache
+
+# vscode
+.vscode
