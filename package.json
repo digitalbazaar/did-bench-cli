@@ -24,11 +24,10 @@
   },
   "homepage": "https://github.com/digitalbazaar/did-bench-cli",
   "dependencies": {
-    "apisauce": "^2.1.1",
     "@digitalbazaar/ed25519-signature-2020": "^3.0.0",
     "@digitalbazaar/zcapld": "^5.1.2",
+    "apisauce": "^2.1.1",
     "assert-plus": "^1.0.0",
-    "axios": "^0.21.1",
     "chalk": "^3.0.0",
     "delay": "^4.3.0",
     "did-veres-one": "veres-one/did-veres-one#v14.x",
