@@ -9,6 +9,11 @@
   - Use jsigs v 9.
   - Use `@digitalbazaar/zcapld` over `ocapld`.
 
+### Removed
+  - **BREAKING**: Removed stats client.
+  - **BREAKING**: Removed apisauce & axios.
+  - **BREAKING**: Removed the cli options `-m` for monitor.
+
 ## 0.1.0 - xxxx
 
 - See git history for changes.
