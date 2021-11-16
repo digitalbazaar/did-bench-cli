@@ -6,6 +6,8 @@
   - **BREAKING**: Use Ed25519 Verification Key 2020 v3.
   - **BREAKING**: Use Ed25519 Signature 2020.
   - **BREAKING**: Remove jws from proofs.
+  - **BREAKING**: Change capability ids to root zcaps.
+  - **BREAKING**: Use attenuated invocationTargets.
   - Use jsigs v 9.
   - Use `@digitalbazaar/zcapld` over `ocapld`.
 
